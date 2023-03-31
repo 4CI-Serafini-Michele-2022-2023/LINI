@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html>
+	<head>
+		<script src="js/registra.js"></script>
+		<link rel="stylesheet" href="stile/stylesheet.css">
+		<link rel="stylesheet" href="stile/datepicker.css">
+		<title>Welcome To Registration Form</title>
+		<body background="img/bella.png">
+	</head>
+	
+	<body>
+		<div class = "topnav">
+		<a href ="index.html">Home</a>
+		</div>
+		<!-- Main div code -->
+		<div id="main">
+		<div class="h-tag">
+		<h2>Create Your Account</h2>
+		</div>
+		<div class="login">
+		<table cellspacing="2" align="center" cellpadding="8" border="0">
+		<tr>
+		<td align="right">Enter Name :</td>
+		<td><input type="text" placeholder="Enter User here" id="nome" class="tb" /></td>
+		</tr>
+		<tr>
+		<td align="right">Enter Surname :</td>
+		<td><input type="text" placeholder="Enter Surname here" id="cognome" class="tb" /></td>
+		</tr>
+		<tr>
+		<td align="right">Enter Email :</td>
+		<td><input type="text" placeholder="Enter Email ID here" id="email" class="tb" /></td>
+		</tr>
+		<tr>
+		<td align="right">Enter Your Address :</td>
+		<td><input type="text" placeholder="Enter Your Address" id="indirizzo" class="tb" /></td>
+		</tr>
+		<td>
+		<input type="reset" value="inserisci persona" onclick="inserisciPersona()" id="res" class="btn" />
+		<input type="submit" value="visualizza persone" class="btn" onclick="visualizzaPersone()" /></td>
+		</tr>
+		</table>
+		<div id="output"></div>
+	</body>
+</html>
