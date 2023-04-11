@@ -3,7 +3,7 @@ let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 let bird_props = bird.getBoundingClientRect();
 let background = document.querySelector('.background');
-let message = document.querySelector('.message');
+let messaggio = document.querySelector('.message');
 
 img.style.display = 'none';
 
@@ -15,8 +15,8 @@ document.addEventListener('keydown', (e) => {
         });
         img.style.display = 'block';
         bird.style.top = '40vh';
-        message.innerHTML = '';
-        message.classList.remove('messageStyle');
+        messaggio.innerHTML = '';
+        messaggio.classList.remove('messageStyle');
         play();
     }
 });
@@ -33,8 +33,8 @@ function play(){
                 element.remove();
             }else{
                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
-                    message.innerHTML = 'Press Enter To Restart';
-                    message.classList.add('messageStyle');
+                    messaggio.innerHTML = 'Press Enter To Restart';
+                    messaggio.classList.add('messageStyle');
                     img.style.display = 'none';
                     return;
                 }else{
@@ -65,9 +65,9 @@ function play(){
         });
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
-            message.style.left = '28vw';
+            messaggio.style.left = '28vw';
             window.location.reload();
-            message.classList.remove('messageStyle');
+            messaggio.classList.remove('messageStyle');
             return;
         }
         bird.style.top = bird_props.top + bird_dy + 'px';
