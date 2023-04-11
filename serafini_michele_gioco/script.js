@@ -10,7 +10,7 @@ img.style.display = 'none';
 document.addEventListener('keydown', (e) => {
     
     if(e.key == 'Enter'){
-        document.querySelectorAll('.pipe_sprite').forEach((e) => {
+        document.querySelectorAll('.tubo_sprite').forEach((e) => {
             e.remove();
         });
         img.style.display = 'block';
@@ -24,23 +24,23 @@ document.addEventListener('keydown', (e) => {
 function play(){
     function move(){
 
-        let pipe_sprite = document.querySelectorAll('.pipe_sprite');
-        pipe_sprite.forEach((element) => {
-            let pipe_sprite_props = element.getBoundingClientRect();
+        let tubo_sprite = document.querySelectorAll('.tubo_sprite');
+        tubo_sprite.forEach((element) => {
+            let tubo_sprite_props = element.getBoundingClientRect();
             bird_props = bird.getBoundingClientRect();
 
-            if(pipe_sprite_props.right <= 0){
+            if(tubo_sprite_props.right <= 0){
                 element.remove();
             }else{
-                if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
+                if(bird_props.left < tubo_sprite_props.left + tubo_sprite_props.width && bird_props.left + bird_props.width > tubo_sprite_props.left && bird_props.top < tubo_sprite_props.top + tubo_sprite_props.height && bird_props.top + bird_props.height > tubo_sprite_props.top){
                     message.innerHTML = 'Press Enter To Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     return;
                 }else{
-                    if(pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left){
+                    if(tubo_sprite_props.right < bird_props.left && tubo_sprite_props.right + move_speed >= bird_props.left){
                     }
-                    element.style.left = pipe_sprite_props.left - move_speed + 'px';
+                    element.style.left = tubo_sprite_props.left - move_speed + 'px';
                 }
             }
         });
@@ -76,31 +76,31 @@ function play(){
     }
     requestAnimationFrame(gravità);
 
-    let pipe_seperation = 0;
+    let tubo_seperation = 0;
 
-    let pipe_gap = 35;
+    let tubo_gap = 35;
 
-    function create_pipe(){
+    function crea_tubo(){
 
-        if(pipe_seperation > 115){
-            pipe_seperation = 0;
+        if(tubo_seperation > 115){
+            tubo_seperation = 0;
 
-            let pipe_posi = Math.floor(Math.random() * 43) + 8;
-            let pipe_sprite_inv = document.createElement('div');
-            pipe_sprite_inv.className = 'pipe_sprite';
-            pipe_sprite_inv.style.top = pipe_posi - 70 + 'vh';
-            pipe_sprite_inv.style.left = '100vw';
+            let tubo_posi = Math.floor(Math.random() * 43) + 8;
+            let tubo_sprite_div = document.createElement('div');
+            tubo_sprite_div.className = 'tubo_sprite';
+            tubo_sprite_div.style.top = tubo_posi - 70 + 'vh';
+            tubo_sprite_div.style.left = '100vw';
 
-            document.body.appendChild(pipe_sprite_inv);
-            let pipe_sprite = document.createElement('div');
-            pipe_sprite.className = 'pipe_sprite';
-            pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
-            pipe_sprite.style.left = '100vw';
+            document.body.appendChild(tubo_sprite_inv);
+            let tubo_sprite = document.createElement('div');
+            tubo_sprite.className = 'tubo_sprite';
+            tubo_sprite.style.top = tubo_posi + tubo_gap + 'vh';
+            tubo_sprite.style.left = '100vw';
 
-            document.body.appendChild(pipe_sprite);
+            document.body.appendChild(tubo_sprite);
         }
-        pipe_seperation++;
-        requestAnimationFrame(create_pipe);
+        tubo_seperation++;
+        requestAnimationFrame(crea_tubo);
     }
-    requestAnimationFrame(create_pipe);
+    requestAnimationFrame(crea_tubo);
 }
