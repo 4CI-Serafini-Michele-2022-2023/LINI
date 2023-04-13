@@ -4,9 +4,7 @@ let img = document.getElementById('bird-1');
 let bird_props = bird.getBoundingClientRect();
 let background = document.querySelector('.background');
 let messaggio = document.querySelector('.message');
-
 img.style.display = 'none';
-
 document.addEventListener('keydown', (e) => {
     
     if(e.key == 'Enter'){
@@ -17,13 +15,12 @@ document.addEventListener('keydown', (e) => {
         bird.style.top = '40vh';
         messaggio.innerHTML = '';
         messaggio.classList.remove('messageStyle');
-        play();
+        gioca();
     }
 });
+function gioca(){
 
-function play(){
     function move(){
-
         let pipe_sprite = document.querySelectorAll('.pipe_sprite');
         pipe_sprite.forEach((element) => {
             let pipe_sprite_props = element.getBoundingClientRect();
@@ -47,8 +44,8 @@ function play(){
         requestAnimationFrame(move);
     }
     requestAnimationFrame(move);
-
     let bird_dy = 0;
+
     function gravità(){
         bird_dy = bird_dy + gravity;
         document.addEventListener('keydown', (e) => {
@@ -57,13 +54,11 @@ function play(){
                 bird_dy = -7.6;
             }
         });
-
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
                 img.src = 'images/Bird.png';
             }
         });
-
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
             messaggio.style.left = '28vw';
             window.location.reload();
@@ -75,13 +70,10 @@ function play(){
         requestAnimationFrame(gravità);
     }
     requestAnimationFrame(gravità);
-
     let pipe_seperation = 0;
-
     let pipe_gap = 35;
 
-    function create_pipe(){
-
+    function crea_tubo(){
         if(pipe_seperation > 115){
             pipe_seperation = 0;
 
@@ -100,7 +92,7 @@ function play(){
             document.body.appendChild(pipe_sprite);
         }
         pipe_seperation++;
-        requestAnimationFrame(create_pipe);
+        requestAnimationFrame(crea_tubo);
     }
-    requestAnimationFrame(create_pipe);
+    requestAnimationFrame(crea_tubo);
 }
