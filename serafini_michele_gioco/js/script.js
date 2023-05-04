@@ -5,6 +5,7 @@ let bird_props = bird.getBoundingClientRect();
 let background = document.querySelector('.background');
 let messaggio = document.querySelector('.message');
 let fly_audio = new Audio("fly.mp3");
+let audio = new Audio("sium.mp3");
 
 img.style.display = 'none';
 document.addEventListener('keydown', (e) => {
