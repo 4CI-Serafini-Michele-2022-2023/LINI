@@ -52,14 +52,14 @@ function gioca(){
         bird_dy = bird_dy + gravity;
         document.addEventListener('keydown', (e) => {
             if(e.key == 'ArrowUp'){
-                img.src = 'images/Bird-2.png';
+                img.src = 'images/Bird-2.jpg';
                 bird_dy = -7.6;
                 fly_audio.play();
             }
         });
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp'){
-                img.src = 'images/Bird.png';
+                img.src = 'images/Bird.jpg';
                 
             }
         });
