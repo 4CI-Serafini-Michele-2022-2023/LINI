@@ -4,6 +4,8 @@ let img = document.getElementById('bird-1');
 let bird_props = bird.getBoundingClientRect();
 let background = document.querySelector('.background');
 let messaggio = document.querySelector('.message');
+let fly_audio = new Audio("fly.mp3");
+
 img.style.display = 'none';
 document.addEventListener('keydown', (e) => {
     
@@ -49,17 +51,19 @@ function gioca(){
     function gravità(){
         bird_dy = bird_dy + gravity;
         document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp' || e.key == ' '){
+            if(e.key == 'ArrowUp'){
                 img.src = 'images/Bird-2.png';
                 bird_dy = -7.6;
+                fly_audio.play();
             }
         });
         document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp' || e.key == ' '){
+            if(e.key == 'ArrowUp'){
                 img.src = 'images/Bird.png';
+                
             }
         });
-        if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
+        if(bird_props.top <= 0 || bird_props.bottom >700){
             messaggio.style.left = '28vw';
             window.location.reload();
             messaggio.classList.remove('messageStyle');
