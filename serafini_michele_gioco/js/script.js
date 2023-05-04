@@ -60,6 +60,7 @@ function gioca(){
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp'){
                 img.src = 'images/Bird.jpg';
+                fly_audio.play();
                 
             }
         });
