@@ -78,7 +78,7 @@ function gioca(){
     let pipe_gap = 40;
 
     function crea_tubo(){
-        if(pipe_seperation > 115){
+        if(pipe_seperation > 85){
             pipe_seperation = 0;
 
             let pipe_posi = Math.floor(Math.random() * 43) + 8;
