@@ -75,7 +75,7 @@ function gioca(){
     }
     requestAnimationFrame(gravità);
     let pipe_seperation = 0;
-    let pipe_gap = 35;
+    let pipe_gap = 40;
 
     function crea_tubo(){
         if(pipe_seperation > 115){
