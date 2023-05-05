@@ -5,7 +5,6 @@ let bird_props = bird.getBoundingClientRect();
 let background = document.querySelector('.background');
 let messaggio = document.querySelector('.message');
 let fly_audio = new Audio("fly.mp3");
-let audio = new Audio("sium.mp3");
 
 img.style.display = 'none';
 document.addEventListener('keydown', (e) => {
@@ -33,7 +32,6 @@ function gioca(){
                 element.remove();
             }else{
                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
-                    messaggio.innerHTML = 'Press Enter To Restart';
                     messaggio.classList.add('messageStyle');
                     img.style.display = 'none';
                     return;
