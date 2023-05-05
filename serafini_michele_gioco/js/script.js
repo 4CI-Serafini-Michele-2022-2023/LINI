@@ -63,7 +63,7 @@ function gioca(){
                 
             }
         });
-        if(bird_props.top <= 0 || bird_props.bottom >700){
+        if(bird_props.top <= 0 || bird_props.bottom >1200){
             messaggio.style.left = '28vw';
             window.location.reload();
             messaggio.classList.remove('messageStyle');
